@@ -9,9 +9,12 @@ string user;
 string passw;
 
 void menAdmin();
+void regmenEmpleados();
+void manualCarga();
 void menEmpleados();
-void menProyecto();
+void crearProyecto();
 void menTarea();
+void asignarProyecto();
 void asigTarea();
 
 void login(){
@@ -20,9 +23,9 @@ void login(){
     cin >> user;
     cout << "Password: ";
     cin >> passw;
-
+    cout<<""<<endl;
     if (user == primerUsuario && passw == primeraContra) {
-        menuAdministrador();
+        menAdmin();
     } else {
         cout << "Usuario o password incorrecto" << endl;
         login();
@@ -34,23 +37,27 @@ void menAdmin(){
     cout << "****   Bienvenido " << user << "         ****" << endl;
     cout << " 1. Cargar empleados " << endl;
     cout << " 2. Crear Proyecto " << endl;
-    cout << " 3. Crear Tareas " << endl;
-    cout << " 4. Asignar Tareas " << endl;
-    cout << " 5. Salir " << endl;
-
+    cout << " 3. Asignar proyecto " << endl;
+    cout << " 4. Crear Tareas " << endl;
+    cout << " 5. Asignar Tareas " << endl;
+    cout << " 6. Salir " << endl;
 
     string opc1 = "";
-    cout << "Elige una opcion: " << endl;
+    cout << "Elige una opcion: ";
     cin >> opc1;
+
+    cout<<""<<endl;
 
     if (opc1 == "1") {
         menEmpleados();
     } else if (opc1 == "2") {
-        menProyecto();
+        crearProyecto();
     } else if (opc1 == "3") {
+        asignarProyecto();
+    } else if (opc1 == "4") {
         menTarea();
     } else if (opc1 == "4") {
-        asigTarea();
+        cout << "asigTarea()";
     } else if (opc1 == "5") {
         exit(0);
     } else {
@@ -58,52 +65,163 @@ void menAdmin(){
     }
 }
 
+void regmenEmpleados(){
+    cout << "Desea agregar un nuevo empleado manualmente?"<< endl;
+    cout << "1. Si"<< endl;
+    cout << "2. No"<< endl;
+    string opmE;
+    cin >> opmE;
+    cout<<""<<endl;
+    if (opmE == "1"){
+        manualCarga();
+    } else if (opmE == "2"){
+        menAdmin();
+    } else {
+        cout << "Elija una opcion valida";
+        menEmpleados();
+    }
+}
+
+void manualCarga(){
+    string nuevoNom;
+    string nuevaPassw;
+    cout << " Nombre: ";
+    cin >> nuevoNom;
+    cout << " Password: ";
+    cin >> nuevaPassw;
+    cout<<""<<endl;
+    regmenEmpleados();
+}
+
+void cargaMasiva(){
+    cout << "Falta xd" <<endl;
+}
+
 void menEmpleados() {
     cout << "****          EDD ProjectUp          ****" << endl;
-    cout << "****   Bienvenido " << usernameInput << "         ****" << endl;
-    cout << "****     Menú de Cargar Usuarios     ****" << endl;
+    cout << "****   Bienvenido " << user << "         ****" << endl;
+    cout << "****     Menú de Cargar Empleados     ****" << endl;
     cout << " 1. Carga manual" << endl;
     cout << " 2. Carga masiva" << endl;
-    cout << "Ingrese el número de la opción que desea: " << endl;
+    cout << "Ingrese el número de la opción que desea: ";
     string opc2;
     cin >> opc2;
+    cout<<""<<endl;
 
     if (opc2 == "1"){
         manualCarga();
     } else if (opc2 == "2") {
-        menProyecto();
+        cargaMasiva();
+        menAdmin();
     } else {
         cout << "Ingrese una opcion valida";
+        menEmpleados();
     }
 }
 
-void menProyecto() {
+void regcrearProyecto(){
+    cout << "Desea agregar un nuevo proyecto?"<< endl;
+    cout << "1. Si"<< endl;
+    cout << "2. No"<< endl;
+    string opmP;
+    cin >> opmP;
+    cout<<""<<endl;
+    if (opmP == "1"){
+        crearProyecto();
+    } else if (opmP == "2"){
+        menAdmin();
+    } else {
+        cout << "Elija una opcion valida";
+        regcrearProyecto();
+    }
+}
+
+void crearProyecto(){
     cout << "****          EDD ProjectUp          ****" << endl;
-    cout << "****   Bienvenido " << usernameInput << "         ****" << endl;
+    cout << "****   Bienvenido " << user << "         ****" << endl;
     cout << "****     Menú de proyecto     ****" << endl;
-    cout << " Nombre del proyecto: " << endl;
+    cout << " Nombre del proyecto: ";
     string nomProyecto;
     cin >> nomProyecto;
-    cout << " Tipo de prioridad: " << endl;
+    cout << " Tipo de prioridad: ";
     string tipoPriori;
     cin >> tipoPriori;
-
-    /* Falta funcionamiento*/
+    cout<<"Creado exitosamente con el código, "<<endl;
+    regcrearProyecto();
 }
 
 /* Asignar proyecto
-
     Pedir puesto de trabajo
     Pedir codigo de proyecto a trabajar
 */
 
-/* Crear Tarea
+void regasignarProyecto(){
+    cout << "Desea asignar un nuevo proyecto?"<< endl;
+    cout << "1. Si"<< endl;
+    cout << "2. No"<< endl;
+    string opmA;
+    cin >> opmA;
+    cout<<""<<endl;
+    if (opmA == "1"){
+        asignarProyecto();
+    } else if (opmA == "2"){
+        menAdmin();
+    } else {
+        cout << "Elija una opcion valida";
+        regasignarProyecto();
+    }
+}
 
-    A cada proyecto se le puede agregar una tarea
-    El proyecto debe existir en la cola de prioridad
-    Mostrar la cola de prioridad con numerales.
-    Solicitar el numeral y escribir la tarea a realizar.
-*/
+void asignarProyecto(){
+    cout << "****          EDD ProjectUp          ****" << endl;
+    cout << "****   Bienvenido " << user << "         ****" << endl;
+    cout << "****     Asignacion de proyecto     ****" << endl;
+    cout << " Nombre del empleado: ";
+    string nomEmployee;
+    cin >> nomEmployee;
+    cout << " Trabajo del empleado: ";
+    string opcWork;
+    cin >> opcWork;
+    cout << " Asignado al proyecto: ";
+    string opcProy;
+    cin >> opcProy;
+    cout<<"Asignado correctamente"<<endl;
+    cout<<""<<endl;
+
+    /*funcionamiento */
+    regasignarProyecto();
+}
+
+void regmenTarea(){
+    cout << "Desea crear una nueva tarea?"<< endl;
+    cout << "1. Si"<< endl;
+    cout << "2. No"<< endl;
+    string opmT;
+    cin >> opmT;
+    cout<<""<<endl;
+    if (opmT == "1"){
+        menTarea();
+    } else if (opmT == "2"){
+        menAdmin();
+    } else {
+        cout << "Elija una opcion valida";
+        regmenTarea();
+    }
+}
+
+void menTarea(){
+    cout << "****          EDD ProjectUp          ****" << endl;
+    cout << "****   Bienvenido " << user << "         ****" << endl;
+    cout << "****     Menu de Tareas     ****" << endl;
+    /* imprimir los proyectos con su codigo*/
+    cout << "Elija un proyecto: ";
+    string opcTProy;
+    cin >> opcTProy;
+    cout << "Nombre de la tarea: ";
+    string nomTarea;
+    cin >> nomTarea;
+    regmenTarea();
+}
 
 /*
     Asignar tarea(?

@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1693199317 source:c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\nododobleenlazada.cpp
+	"NodoDobleEnlazada.h"
+
+1693199317 c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\nododobleenlazada.h
+
+1693270731 source:c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\empleado.cpp
+	"Empleado.h"
+
+1693289379 c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\empleado.h
+	<string>
+
+1693270771 source:c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\nodolistacircular.cpp
+	"NodoListaCircular.h"
+
+1693287993 c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\nodolistacircular.h
+	"Empleado.h"
+
+1693199407 source:c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\nodomatrizdispersa.cpp
+	"NodoMatrizDispersa.h"
+
+1693199407 c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\nodomatrizdispersa.h
+
+1693334552 source:c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\main.cpp
+	<iostream>
+	<algorithm>
+	"ListaDobleCircular.h"
+
+1693288331 c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\listadoblecircular.h
+	"NodoListaCircular.h"
+	<iostream>
+	<fstream>
+	<string.h>
+	<cstring>
+	<sstream>
+	<stdlib.h>
+
+1693336490 source:c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\listadoblecircular.cpp
+	"ListaDobleCircular.h"
+

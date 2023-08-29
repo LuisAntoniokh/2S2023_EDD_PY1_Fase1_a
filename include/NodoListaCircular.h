@@ -1,10 +1,10 @@
 #ifndef NODOLISTACIRCULAR_H
 #define NODOLISTACIRCULAR_H
-
+#include "Empleado.h"
 class NodoListaCircular
 {
     public:
-        //Objeto Empleado (sin puesto)
+        Empleado *EmpleadoSistema;
         NodoListaCircular *Siguiente;
         NodoListaCircular *Anterior;
         NodoListaCircular(string nombre, string password);

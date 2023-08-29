@@ -1,4 +1,6 @@
 #include <iostream>
+#include <algorithm>
+#include "ListaDobleCircular.h"
 
 using namespace std;
 /*Cambiar por el objeto, prueba inicial testeo menu.*/
@@ -7,6 +9,8 @@ string primeraContra = "a";
 
 string user;
 string passw;
+
+ListaDobleCircular *LDC = new ListaDobleCircular();
 
 void menAdmin();
 void regmenEmpleados();
@@ -66,35 +70,35 @@ void menAdmin(){
 }
 
 void regmenEmpleados(){
-    cout << "Desea agregar un nuevo empleado manualmente?"<< endl;
+    cout << "Desea agregar un nuevo empleado?"<< endl;
     cout << "1. Si"<< endl;
     cout << "2. No"<< endl;
     string opmE;
     cin >> opmE;
     cout<<""<<endl;
     if (opmE == "1"){
-        manualCarga();
+        menEmpleados();
     } else if (opmE == "2"){
         menAdmin();
     } else {
         cout << "Elija una opcion valida";
-        menEmpleados();
+        regmenEmpleados();
     }
 }
 
 void manualCarga(){
-    string nuevoNom;
-    string nuevaPassw;
-    cout << " Nombre: ";
-    cin >> nuevoNom;
-    cout << " Password: ";
-    cin >> nuevaPassw;
+    cout << "****     Carga Manual de Empleados     ****" << endl;
+    std::string nuevoNom, nuevaPassw;
+    cout << "Nombre: ";
+    cin.ignore();
+    std::getline(std::cin, nuevoNom);
+    cout << "Password: ";
+    cin>>nuevaPassw;
+    LDC->InsertarLDC(nuevoNom, nuevaPassw);
+    cout << "*******************************************" << endl;
     cout<<""<<endl;
+    LDC->VerListaLDC();
     regmenEmpleados();
-}
-
-void cargaMasiva(){
-    cout << "Falta xd" <<endl;
 }
 
 void menEmpleados() {
@@ -111,8 +115,9 @@ void menEmpleados() {
     if (opc2 == "1"){
         manualCarga();
     } else if (opc2 == "2") {
-        cargaMasiva();
-        menAdmin();
+        LDC->CargaMasivaLDC("empleados.csv");
+        LDC->VerListaLDC();
+        regmenEmpleados();
     } else {
         cout << "Ingrese una opcion valida";
         menEmpleados();
@@ -147,6 +152,7 @@ void crearProyecto(){
     string tipoPriori;
     cin >> tipoPriori;
     cout<<"Creado exitosamente con el código, "<<endl;
+    cout<<""<<endl;
     regcrearProyecto();
 }
 
@@ -176,14 +182,12 @@ void asignarProyecto(){
     cout << "****          EDD ProjectUp          ****" << endl;
     cout << "****   Bienvenido " << user << "         ****" << endl;
     cout << "****     Asignacion de proyecto     ****" << endl;
+    std::string nomEmployee, opcWork, opcProy;
     cout << " Nombre del empleado: ";
-    string nomEmployee;
     cin >> nomEmployee;
     cout << " Trabajo del empleado: ";
-    string opcWork;
     cin >> opcWork;
     cout << " Asignado al proyecto: ";
-    string opcProy;
     cin >> opcProy;
     cout<<"Asignado correctamente"<<endl;
     cout<<""<<endl;

@@ -34,6 +34,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Empleado.cpp" />
+		<Unit filename="include/Empleado.h" />
+		<Unit filename="include/ListaDobleCircular.cpp" />
+		<Unit filename="include/ListaDobleCircular.h" />
 		<Unit filename="include/NodoDobleEnlazada.cpp" />
 		<Unit filename="include/NodoDobleEnlazada.h" />
 		<Unit filename="include/NodoListaCircular.cpp" />

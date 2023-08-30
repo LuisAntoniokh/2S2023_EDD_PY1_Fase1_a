@@ -1,8 +1,13 @@
 #include "NodoDobleEnlazada.h"
 
-NodoDobleEnlazada::NodoDobleEnlazada()
+NodoDobleEnlazada::NodoDobleEnlazada(std::string codigo, std::string nombre_tarea, std::string codigo_encargado)
 {
     //ctor
+    this->Codigo = codigo;
+    this->Nombre_Tarea = nombre_tarea;
+    this->Codigo_Encargado = codigo_encargado;
+    this->Anterior=0;
+    this->Siguiente=0;
 }
 
 NodoDobleEnlazada::~NodoDobleEnlazada()

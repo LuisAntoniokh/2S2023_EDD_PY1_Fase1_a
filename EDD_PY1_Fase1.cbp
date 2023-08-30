@@ -34,16 +34,26 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/ColaPrioridad.cpp" />
+		<Unit filename="include/ColaPrioridad.h" />
 		<Unit filename="include/Empleado.cpp" />
 		<Unit filename="include/Empleado.h" />
 		<Unit filename="include/ListaDobleCircular.cpp" />
 		<Unit filename="include/ListaDobleCircular.h" />
+		<Unit filename="include/ListaDobleEnlazada.cpp" />
+		<Unit filename="include/ListaDobleEnlazada.h" />
+		<Unit filename="include/MatrizDispersa.cpp" />
+		<Unit filename="include/MatrizDispersa.h" />
+		<Unit filename="include/NodoCola.cpp" />
+		<Unit filename="include/NodoCola.h" />
 		<Unit filename="include/NodoDobleEnlazada.cpp" />
 		<Unit filename="include/NodoDobleEnlazada.h" />
 		<Unit filename="include/NodoListaCircular.cpp" />
 		<Unit filename="include/NodoListaCircular.h" />
 		<Unit filename="include/NodoMatrizDispersa.cpp" />
 		<Unit filename="include/NodoMatrizDispersa.h" />
+		<Unit filename="include/Proyecto.cpp" />
+		<Unit filename="include/Proyecto.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

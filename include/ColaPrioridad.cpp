@@ -70,3 +70,35 @@ void ColaPrioridad::Ordenar(){
         }
     }
 }
+
+void ColaPrioridad::Graficar(){
+    ofstream arch;
+    std::string text = "";
+    std::string nombre_archivo = "cola.dot";
+    std::string nombre_imagen = "cola.jpg";
+
+    NodoCola *actual = Primero;
+
+    arch.open(nombre_archivo, ios::out);
+    if (actual != 0) {
+        arch << "digraph G{\n node[shape=box]; rankdir=LR;\n";
+        while (actual) {
+            arch << "    \"" << actual->Proyecto_C->Codigo << "\" [label=\"" << actual->Proyecto_C->Codigo << "\\nPrioridad: " << actual->Prioridad << "\"];" << endl;
+            if (actual->Siguiente) {
+                arch << "    \"" << actual->Proyecto_C->Codigo << "\" -> \"" << actual->Siguiente->Proyecto_C->Codigo << "\";" << endl;
+            }
+            actual = actual->Siguiente;
+        }
+
+        arch << "}" << endl;
+        arch.close();
+    }
+    std::string codigo_cmd = "dot -Tjpg ";
+    codigo_cmd += nombre_archivo;
+    codigo_cmd += " -o ";
+    codigo_cmd += nombre_imagen;
+    char j[codigo_cmd.size() + 1];
+    strcpy(j, codigo_cmd.c_str());
+    cout << j << endl;
+    system(j);
+}

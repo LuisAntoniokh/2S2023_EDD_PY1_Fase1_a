@@ -2,8 +2,10 @@
 #define COLAPRIORIDAD_H
 #include "NodoCola.h"
 #include "Proyecto.h"
+#include <fstream>
 #include <string>
 #include <iostream>
+#include <string.h>
 using namespace std;
 
 class ColaPrioridad
@@ -15,6 +17,7 @@ class ColaPrioridad
         void Descolar();
         void VerProyectos();
         void Ordenar();
+        void Graficar();
         ColaPrioridad();
         virtual ~ColaPrioridad();
 

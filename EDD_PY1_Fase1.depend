@@ -26,7 +26,7 @@
 	"Empleado.h"
 	"ListaDobleEnlazada.h"
 
-1693377571 source:c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\main.cpp
+1693437245 source:c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\main.cpp
 	<iostream>
 	"ListaDobleCircular.h"
 	"ListaDobleEnlazada.h"
@@ -45,14 +45,16 @@
 1693336490 source:c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\listadoblecircular.cpp
 	"ListaDobleCircular.h"
 
-1693368210 source:c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\colaprioridad.cpp
+1693437905 source:c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\colaprioridad.cpp
 	"ColaPrioridad.h"
 
-1693354379 c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\colaprioridad.h
+1693436943 c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\colaprioridad.h
 	"NodoCola.h"
 	"Proyecto.h"
+	<fstream>
 	<string>
 	<iostream>
+	<string.h>
 
 1693349685 c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\nodocola.h
 	"Proyecto.h"
@@ -74,7 +76,7 @@
 1693347352 source:c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\proyecto.cpp
 	"Proyecto.h"
 
-1693377739 source:c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\matrizdispersa.cpp
+1693378577 source:c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\matrizdispersa.cpp
 	"MatrizDispersa.h"
 
 1693376066 c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\matrizdispersa.h

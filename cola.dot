@@ -1,0 +1,10 @@
+digraph G{
+ node[shape=box]; rankdir=LR;
+    "PY-100" [label="PY-100\nPrioridad: A"];
+    "PY-100" -> "PY-103";
+    "PY-103" [label="PY-103\nPrioridad: A"];
+    "PY-103" -> "PY-101";
+    "PY-101" [label="PY-101\nPrioridad: B"];
+    "PY-101" -> "PY-102";
+    "PY-102" [label="PY-102\nPrioridad: C"];
+}

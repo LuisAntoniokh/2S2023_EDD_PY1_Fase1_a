@@ -6,11 +6,14 @@
 
 using namespace std;
 /*Cambiar por el objeto, prueba inicial testeo menu.*/
-string primerUsuario = "a";
-string primeraContra = "a";
+string primerUsuario = "PM-202109750";
+string primeraContra = "pmPassword123";
+string user, passw;
 
-string user;
-string passw;
+bool primeraIteracion = true;
+int num_fdev=0;
+int num_bdev=0;
+int num_qa=0;
 
 ListaDobleCircular *LDC = new ListaDobleCircular();
 ListaDobleEnlazada *LED = new ListaDobleEnlazada();
@@ -194,35 +197,75 @@ void crearProyecto(){
     cout<<""<<endl;
     cola->Ordenar();
     cola->VerProyectos();
+    cola->Graficar();
     cout<<""<<endl;
     regcrearProyecto();
 }
-
-/* Asignar proyecto
-    Pedir puesto de trabajo
-    Pedir codigo de proyecto a trabajar
-*/
 
 void asignarProyectos(){
     cout << "****          EDD ProjectUp          ****" << endl;
     cout << "****   Bienvenido " << user << "         ****" << endl;
     cout << "****     Asignacion de proyecto     ****" << endl;
-    std::string nomEmployee, opcWork, opcProy;
-    cin.ignore(); // Limpiar el búfer antes de la primera entrada
-
+    std::string nomEmployee, opcProy;
+    cin.ignore();
     cout << " Nombre del empleado: ";
     std::getline(cin, nomEmployee);
-    cout << " Trabajo del empleado: ";
-    std::getline(cin, opcWork);
-    cout << " Asignado al proyecto: ";
-    std::getline(cin, opcProy);
+    cout << " Puesto de trabajo del empleado "<<endl;
+    cout << " 1. Frontend Developer " <<endl;
+    cout << " 2. Backend Developer " <<endl;
+    cout << " 3. Quality Assurance (QA) " <<endl;
+    cout << " Seleccione una opcion: ";
+    int opcWork;
+    cin >> opcWork;
+    std::string codigo_empleado;
+    NodoListaCircular *aux;
 
-    while(cola->Primero){
-        matriz->insertar_proyecto(cola);
-        cola->Descolar();
+    if(opcWork==1){
+        num_fdev += 1;
+        codigo_empleado = (num_fdev < 100 ? (num_fdev < 10 ? "FDEV-00"+std::to_string(num_fdev) : "FDEV-0"+std::to_string(num_fdev)): "FDEV-"+std::to_string(num_fdev));
+        aux = LDC->Primero;
+        do {
+            if (aux->EmpleadoSistema->Nombre == nomEmployee) {
+                aux->EmpleadoSistema->Codigo = codigo_empleado;
+                break;
+            }
+            aux = aux->Siguiente;
+        } while (aux != LDC->Primero);
+    } else if(opcWork==2){
+        num_bdev += 1;
+        codigo_empleado = (num_bdev < 100 ? (num_bdev < 10 ? "BDEV-00"+std::to_string(num_bdev) : "BDEV-0"+std::to_string(num_bdev)): "BDEV-"+std::to_string(num_bdev));
+        aux = LDC->Primero;
+        do {
+            if (aux->EmpleadoSistema->Nombre == nomEmployee) {
+                aux->EmpleadoSistema->Codigo = codigo_empleado;
+                break;
+            }
+            aux = aux->Siguiente;
+        } while (aux != LDC->Primero);
+    } else if(opcWork==3){
+        num_qa += 1;
+        codigo_empleado = (num_qa < 100 ? (num_qa < 10 ? "QA-00"+std::to_string(num_qa) : "QA-0"+std::to_string(num_qa)): "QA-"+std::to_string(num_qa));
+        aux = LDC->Primero;
+        do {
+            if (aux->EmpleadoSistema->Nombre == nomEmployee) {
+                aux->EmpleadoSistema->Codigo = codigo_empleado;
+                break;
+            }
+            aux = aux->Siguiente;
+        } while (aux != LDC->Primero);
     }
-    matriz->insertar_empleado(LDC);
 
+    cout << " Asignado al proyecto: ";
+    cin >> opcProy;
+
+    if(primeraIteracion){
+        while(cola->Primero){
+            matriz->insertar_proyecto(cola);
+            cola->Descolar();
+        }
+        matriz->insertar_empleado(LDC);
+        primeraIteracion = false;
+    }
     matriz->asignarProyecto(nomEmployee, opcProy);
 
     matriz->Graficar();
@@ -252,12 +295,9 @@ void menTarea(){
     Asignar tarea(?
 */
 
-/*
-    Reportes(?
-*/
-
 int main()
 {
+    system("pause");
     login();
     return 0;
 }

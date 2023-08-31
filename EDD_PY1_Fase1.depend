@@ -26,8 +26,10 @@
 	"Empleado.h"
 	"ListaDobleEnlazada.h"
 
-1693437245 source:c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\main.cpp
+1693456685 source:c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\main.cpp
 	<iostream>
+	<nlohmann/json.hpp>
+	<fstream>
 	"ListaDobleCircular.h"
 	"ListaDobleEnlazada.h"
 	"ColaPrioridad.h"
@@ -45,10 +47,10 @@
 1693336490 source:c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\listadoblecircular.cpp
 	"ListaDobleCircular.h"
 
-1693437905 source:c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\colaprioridad.cpp
+1693457942 source:c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\colaprioridad.cpp
 	"ColaPrioridad.h"
 
-1693436943 c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\colaprioridad.h
+1693457116 c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\colaprioridad.h
 	"NodoCola.h"
 	"Proyecto.h"
 	<fstream>
@@ -62,7 +64,7 @@
 1693347293 c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\proyecto.h
 	<string>
 
-1693372093 source:c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\listadobleenlazada.cpp
+1693451864 source:c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\listadobleenlazada.cpp
 	"ListaDobleEnlazada.h"
 
 1693371781 c:\users\user\documents\usac\vi semestre\edd\lab\edd_py1_fase1\include\listadobleenlazada.h

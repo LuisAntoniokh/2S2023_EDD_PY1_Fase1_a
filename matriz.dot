@@ -2,37 +2,27 @@ digraph MatrizCapa{
  node[shape=box] 
  rankdir=UD;
 {rank=same; 
-nodo0xff6d88[label="RAIZ\n" ,group=0]; 
-nodo0xff6f58[label="PY-100" ,group=1]; 
-nodo0xff6f88[label="PY-102" ,group=2]; 
-nodo0xff6fb8[label="PY-101" ,group=3]; 
+nodo0xa60f38[label="RAIZ\n" ,group=0]; 
+nodo0xa610b8[label="PY-100" ,group=1]; 
 } 
 {rank=same; 
-nodo0xff7000[label="Cristian Suy" ,group=0]; 
-nodo0xff04f8[label="PY-100\nFDEV-001" ,group=1]; 
+nodo0xa610e8[label="Cristian Suy" ,group=0]; 
+nodo0xa61208[label="PY-100\nFDEV-001" ,group=1]; 
 } 
 {rank=same; 
-nodo0xff7048[label="Alberto Mejia" ,group=0]; 
-nodo0xff0528[label="PY-102\nQA-001" ,group=2]; 
+nodo0xa61130[label="Alberto Mejia" ,group=0]; 
 } 
 {rank=same; 
-nodo0xff7090[label="Paula Fuentes" ,group=0]; 
-nodo0xff0558[label="PY-101\nBDEV-001" ,group=3]; 
+nodo0xa61178[label="Paula Fuentes" ,group=0]; 
 } 
 {rank=same; 
-nodo0xff04b0[label="Hector Gomez" ,group=0]; 
+nodo0xa611c0[label="Hector Gomez" ,group=0]; 
 } 
-nodo0xff6d88 -> nodo0xff6f58 [dir=both];
-nodo0xff6f58 -> nodo0xff6f88 [dir=both];
-nodo0xff6f88 -> nodo0xff6fb8 [dir=both];
-nodo0xff7000 -> nodo0xff04f8 [dir=both];
-nodo0xff7048 -> nodo0xff0528 [dir=both];
-nodo0xff7090 -> nodo0xff0558 [dir=both];
-nodo0xff6d88 -> nodo0xff7000 [dir=both];
-nodo0xff7000 -> nodo0xff7048 [dir=both];
-nodo0xff7048 -> nodo0xff7090 [dir=both];
-nodo0xff7090 -> nodo0xff04b0 [dir=both];
-nodo0xff6f58 -> nodo0xff04f8 [dir=both];
-nodo0xff6f88 -> nodo0xff0528 [dir=both];
-nodo0xff6fb8 -> nodo0xff0558 [dir=both];
+nodo0xa60f38 -> nodo0xa610b8 [dir=both];
+nodo0xa610e8 -> nodo0xa61208 [dir=both];
+nodo0xa60f38 -> nodo0xa610e8 [dir=both];
+nodo0xa610e8 -> nodo0xa61130 [dir=both];
+nodo0xa61130 -> nodo0xa61178 [dir=both];
+nodo0xa61178 -> nodo0xa611c0 [dir=both];
+nodo0xa610b8 -> nodo0xa61208 [dir=both];
 } 

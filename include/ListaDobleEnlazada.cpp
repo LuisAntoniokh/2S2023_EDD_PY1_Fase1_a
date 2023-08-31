@@ -39,6 +39,9 @@ void ListaDobleEnlazada::Asignar(std::string codigo, std::string nombre_tarea, s
             }
             aux = aux->Siguiente;
         }
+        cout << "Codigo proyecto:" << aux->Codigo << ", Nombre tarea:" << aux->Nombre_Tarea << ", Encargado:" << aux->Codigo_Encargado << endl;
+        cout << "******************************************" << endl;
+        cout<<""<<endl;
     }
 }
 

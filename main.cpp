@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "ListaDobleCircular.h"
 #include "ListaDobleEnlazada.h"
 #include "ColaPrioridad.h"
@@ -20,6 +21,7 @@ ListaDobleEnlazada *LED = new ListaDobleEnlazada();
 ColaPrioridad *cola = new ColaPrioridad();
 MatrizDispersa *matriz = new MatrizDispersa();
 
+void generarJSON();
 void menAdmin();
 void regmenEmpleados();
 void manualCarga();
@@ -69,8 +71,8 @@ void menAdmin(){
     } else if (opc1 == "4") {
         menTarea();
     } else if (opc1 == "5") {
-        cout<<"asigTarea()";
-    } else if (opc1 == "6") {
+        asigTarea();
+    }  else if (opc1 == "6") {
         exit(0);
     } else {
         cout << "Ingrese una opcion valida";
@@ -142,6 +144,23 @@ void regmenTarea(){
     } else {
         cout << "Elija una opcion valida";
         regmenTarea();
+    }
+}
+
+void regasigTarea(){
+    cout << "Desea asignar una nueva tarea?"<< endl;
+    cout << "1. Si"<< endl;
+    cout << "2. No"<< endl;
+    string opmT;
+    cin >> opmT;
+    cout<<""<<endl;
+    if (opmT == "1"){
+        asigTarea();
+    } else if (opmT == "2"){
+        menAdmin();
+    } else {
+        cout << "Elija una opcion valida";
+        regasigTarea();
     }
 }
 
@@ -219,6 +238,7 @@ void asignarProyectos(){
     cin >> opcWork;
     std::string codigo_empleado;
     NodoListaCircular *aux;
+    NodoCola *aux1 = cola->Primero;
 
     if(opcWork==1){
         num_fdev += 1;
@@ -266,7 +286,30 @@ void asignarProyectos(){
         matriz->insertar_empleado(LDC);
         primeraIteracion = false;
     }
+
     matriz->asignarProyecto(nomEmployee, opcProy);
+
+    std::ofstream jsonFile("informe.json");  // Modo de apertura para añadir datos
+    jsonFile <<"{\n" <<"\t \"Proyectos\":[\n";
+    if (jsonFile.is_open()) {
+        // Genera la entrada JSON para el proyecto asignado
+        jsonFile << "\t\t{\n";
+        jsonFile << "\t\t\t\"id\": \"" << opcProy << "\",\n";
+        jsonFile << "\t\t\t\"nombre\": \"" << aux1->Proyecto_C->Nombre << "\",\n";
+        jsonFile << "\t\t\t\"prioridad\": \"" << aux1->Prioridad << "\",\n";
+        jsonFile << "\t\t\t\"tareas\": [\n";
+        // Puedes agregar información sobre las tareas aquí si es necesario
+        jsonFile << "\t\t\t]\n";
+        jsonFile << "\t\t}";
+
+        // Cierra el objeto JSON si hay más proyectos por agregar
+        if (cola->Primero) {
+            jsonFile << ",";
+        }
+
+        jsonFile << "\n" << "\t]\n" << "}\n";
+        jsonFile.close();
+    }
 
     matriz->Graficar();
 
@@ -291,9 +334,30 @@ void menTarea(){
     regmenTarea();
 }
 
-/*
-    Asignar tarea(?
-*/
+void asigTarea(){
+    cout << "****          EDD ProjectUp          ****" << endl;
+    cout << "****   Bienvenido " << user << "         ****" << endl;
+    cout << "****     Asignacion de Tareas     ****" << endl;
+    string opcTProy, nomTarea, nomEncargado;
+    cola->VerProyectos();
+    cout << "Elija un proyecto: ";
+    cin >> opcTProy;
+
+    LED->Mostrar();
+
+    cout << "Nombre de la tarea: ";
+    cin.ignore();
+    std::getline(std::cin, nomTarea);
+
+    LDC->VerListaLDC();
+
+    cout << "Nombre del encargado: ";
+    cin.ignore();
+    std::getline(std::cin, nomEncargado);
+
+    LED->Asignar(opcTProy, nomTarea, nomEncargado);
+    regasigTarea();
+}
 
 int main()
 {
